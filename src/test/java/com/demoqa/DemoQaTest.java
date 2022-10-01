@@ -11,6 +11,11 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class DemoQaTest {
+    String name = "Ivan";
+    String surname = "Ivanov";
+    String email = "ivanivanov123@gmail.com";
+    String number = "77777777777";
+    File file = new File("src/test/file/privet.jpg");
 
     @BeforeAll
     static void setUp() {
@@ -21,13 +26,8 @@ public class DemoQaTest {
 
     @Test
     void testForm() {
-        String name = "Ivan";
-        String surname = "Ivanov";
-        String email = "ivanivanov123@gmail.com";
-        String number = "77777777777";
-        File file = new File("src/test/file/privet.jpg");
-
         open("/automation-practice-form");
+
         $("#firstName").setValue(name);
         $("#lastName").setValue(surname);
         $("#userEmail").setValue(email);
